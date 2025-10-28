@@ -446,6 +446,7 @@ impl Configurator {
 
             progress.set_resource(&evaluated_name, &resource.resource_type);
             progress.write_activity(format!("Set '{evaluated_name}'").as_str());
+            info!("Setting resource '{}' of type '{}'", evaluated_name, resource.resource_type);
             if self.skip_resource(&resource)? {
                 progress.write_increment(1);
                 continue;
